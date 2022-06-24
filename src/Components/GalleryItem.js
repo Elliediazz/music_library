@@ -1,9 +1,6 @@
 import { useContext, useState } from 'react'
-import { DataContext } from '../DataContext'
 
 function GalleryItem(props) {
-    const data = useContext(DataContext)
-    console.log(data)
     const simpleStyle = {
         'width': '25vw',
         'height': '20vh',

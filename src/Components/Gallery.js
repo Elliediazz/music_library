@@ -1,10 +1,7 @@
-import { useContext } from "react"
 import GalleryItem from "./GalleryItem"//gallery item - new component
-import { DataContext } from "../DataContext"
 
-function Gallery () {
-    const data = useContext(DataContext)
-    const display = data.map((item, index) => {
+function Gallery (props) {
+    const display = props.data.map((item, index) => {
         return (
             <GalleryItem item={item} key={index} />
         )
