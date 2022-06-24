@@ -19,7 +19,7 @@ function GalleryItem(props) {
         'color': 'yellow'
     }
     
-    let [view, setView] = useState(false)
+    let [view, setView] = useState(false) 
 
     const simpleView = () => {
         return (

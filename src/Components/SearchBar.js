@@ -10,4 +10,4 @@ function SearchBar(props) {
       </form>
     )
 }
-export default SearchBar
+export default SearchBar 
