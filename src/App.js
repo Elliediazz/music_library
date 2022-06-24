@@ -1,6 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Fragment } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SearchBar from './Components/SearchBar'; //SearchBar
 import Gallery from './Components/Gallery';//Gallery
+import AlbumView from './Components/AlbumView';
+import ArtistView from './Components/ArtistView';
 
 function App() {
   const [search, setSearch] = useState('') //search
@@ -11,7 +14,6 @@ function App() {
     e.preventDefault()
     setSearch(term)
   }
- 
   
   useEffect(() => {
     if (search) {
@@ -32,11 +34,22 @@ function App() {
 
   return (
     <div>
-      <SearchBar handleSearch={handleSearch}/>
-      {message}
-        <Gallery data={data}/>
+    {message}
+        <Router>
+            <Routes>
+                <Route path="/" element={
+                    <Fragment>
+                        <SearchBar handleSearch = {handleSearch}/>
+                        <Gallery data={data} />
+                    </Fragment>
+                } />
+                <Route path="/album/:id" element={<AlbumView />} />
+                <Route path="/artist/:id" element={<ArtistView />} />
+            </Routes>
+        </Router>
     </div>
-  );
+)
+;
 }
 
 export default App;
