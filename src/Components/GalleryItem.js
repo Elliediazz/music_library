@@ -30,10 +30,6 @@ function GalleryItem(props) {
             </div>
         )
     }
-
-    import { Link } from 'react-router-dom'
-
-    ...
     
     const detailView = () => {
         return (
@@ -54,8 +50,6 @@ function GalleryItem(props) {
             </div>
         )
     }
-    
-    
 
     return (
         <div onClick={() => setView(!view)} style={{'display': 'inline-block'}}>
