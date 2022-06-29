@@ -1,6 +1,9 @@
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 
-function GalleryItem(props) {
+const GalleryItem = (props) => {
+
+    let [view, setView] = useState(false) 
+    
     const simpleStyle = {
         'width': '25vw',
         'height': '20vh',
@@ -18,8 +21,7 @@ function GalleryItem(props) {
         'backgroundSize': 'cover',
         'color': 'yellow'
     }
-    
-    let [view, setView] = useState(false) 
+
 
     const simpleView = () => {
         return (

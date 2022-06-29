@@ -1,7 +1,9 @@
 import GalleryItem from "./GalleryItem"//gallery item - new component
 
-function Gallery (props) {
-    const display = props.data.map((item, index) => {
+const Gallery = (props) => {
+    const data = props.data.result.read()
+
+    const display = data.map((item, index) => {
         return (
             <GalleryItem item={item} key={index} />
         )
@@ -9,7 +11,7 @@ function Gallery (props) {
 
     return (
         <div>
-            {display}
+            {display} 
         </div>
     )
 }
